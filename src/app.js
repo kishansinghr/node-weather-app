@@ -75,7 +75,7 @@ app.get('/weather/api', (req, res) => {
     });
 });
 
-app.get('*', (req, res){
+app.get('*', (req, res)=>{
     return res.render('404', {
         title: '404',
         message: 'Resource not available',
