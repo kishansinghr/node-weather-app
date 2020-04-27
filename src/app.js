@@ -5,6 +5,8 @@ const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const weather = require('./utils/weather');
 
+const port = process.env.port || 3000;
+
 const publicPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -73,6 +75,6 @@ app.get('/weather/api', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log('Start listning on port 3000');
+app.listen(port, () => {
+    console.log('Start listning on port ' + port);
 });

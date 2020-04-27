@@ -15,7 +15,7 @@ function formSubmitted(e) {
     const address = addressInput.value;
     if (address) {
         msg1.textContent = 'Loading...';
-        fetch('http://localhost:3000/weather/api?address=' + address).then((response) => {
+        fetch('/weather/api?address=' + address).then((response) => {
             if (response.status !== 200) {
                 return console.log('Error in connecting weather api');
             }
