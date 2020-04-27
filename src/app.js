@@ -5,7 +5,7 @@ const hbs = require('hbs');
 const geocode = require('./utils/geocode');
 const weather = require('./utils/weather');
 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 const publicPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -82,6 +82,7 @@ app.get('*', (req, res)=>{
         author: 'Kishansingh Rathore'
     });
 });
+
 app.listen(port, () => {
     console.log('Start listning on port ' + port);
 });
