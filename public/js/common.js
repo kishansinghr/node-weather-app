@@ -10,27 +10,27 @@ function formSubmitted(e) {
     console.log('common js loaded');
     e.preventDefault();
 
-    msg1.innerHTML = '';
-    msg2.innerHTML = '';
+    msg1.textContent = '';
+    msg2.textContent = '';
     const address = addressInput.value;
     if (address) {
-        msg1.innerHTML = 'Loading...';
+        msg1.textContent = 'Loading...';
         fetch('http://localhost:3000/weather/api?address=' + address).then((response) => {
             if (response.status !== 200) {
                 return console.log('Error in connecting weather api');
             }
             response.json().then((data) => {
                 if (data.error) {
-                    msg1.innerHTML = data.error;
+                    msg1.textContent = data.error;
                 } else {
-                    msg1.innerHTML = data.forecast
-                    msg2.innerHTML = data.location;
+                    msg1.textContent = data.forecast
+                    msg2.textContent = data.location;
                 }
             });
         }).catch((err) => {
-            msg1.innerHTML = err;
+            msg1.textContent = err;
         });
     } else {
-        msg1.innerHTML = 'Please enter address';
+        msg1.textContent = 'Please enter address';
     }
 }
