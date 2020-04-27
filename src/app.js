@@ -75,6 +75,13 @@ app.get('/weather/api', (req, res) => {
     });
 });
 
+app.get('*', (req, res){
+    return res.render('404', {
+        title: '404',
+        message: 'Resource not available',
+        author: 'Kishansingh Rathore'
+    });
+});
 app.listen(port, () => {
     console.log('Start listning on port ' + port);
 });
